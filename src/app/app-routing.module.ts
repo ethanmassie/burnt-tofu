@@ -11,6 +11,14 @@ const routes: Routes = [
   { path: 'home', canActivate: [AuthGuard], component: HomePage },
   { path: 'user', canActivate: [AuthGuard], component: UserPage },
   { path: 'login', component: LoginPage },
+  {
+    path: 'review',
+    loadChildren: () => import('./review/review.module').then( m => m.ReviewPageModule)
+  },
+  {
+    path: 'lesson',
+    loadChildren: () => import('./lesson/lesson.module').then( m => m.LessonPageModule)
+  },
 ];
 
 @NgModule({
